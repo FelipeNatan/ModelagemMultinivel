@@ -1,21 +1,3 @@
-################################################################################
-#               INSTALAÇÃO E CARREGAMENTO DE PACOTES NECESSÁRIOS               #
-################################################################################
-#Pacotes utilizados:
-pacotes <- c("plotly","tidyverse","reshape2","knitr","kableExtra",
-             "nlme","lmtest","fastDummies","msm","lmeInfo","jtools","gganimate",
-             "ggridges","viridis","hrbrthemes")
-
-if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
-  instalador <- pacotes[!pacotes %in% installed.packages()]
-  for(i in 1:length(instalador)) {
-    install.packages(instalador, dependencies = T)
-    break()}
-  sapply(pacotes, require, character = T) 
-} else {
-  sapply(pacotes, require, character = T) 
-}
-
 #Algoritmo para determinação dos erros-padrão das variâncias no componente de
 #efeitos aleatórios
 
